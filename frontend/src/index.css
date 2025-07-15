@@ -1,0 +1,142 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Custom base styles */
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-justice-50 text-justice-900;
+  }
+  
+  /* Legal document text styling */
+  .legal-text {
+    @apply font-legal text-justice-800 leading-relaxed;
+  }
+  
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-justice-100;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-justice-300 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-justice-400;
+  }
+}
+
+/* Custom components */
+@layer components {
+  .search-highlight {
+    @apply bg-legal-200 px-1 py-0.5 rounded;
+  }
+  
+  .btn-primary {
+    @apply bg-legal-600 hover:bg-legal-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-legal-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-justice-200 hover:bg-justice-300 text-justice-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-justice-500 focus:ring-offset-2;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent hover:bg-justice-100 text-justice-700 font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-justice-500 focus:ring-offset-2;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 border border-justice-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-legal-500 focus:border-transparent transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-justice-200 p-6;
+  }
+  
+  .card-hover {
+    @apply bg-white rounded-lg shadow-sm border border-justice-200 p-6 hover:shadow-md transition-shadow duration-200 cursor-pointer;
+  }
+  
+  .legal-citation {
+    @apply text-legal-700 font-medium underline decoration-legal-300 underline-offset-2 hover:decoration-legal-600 transition-colors duration-200;
+  }
+  
+  .document-title {
+    @apply text-xl font-semibold text-justice-900 mb-2;
+  }
+  
+  .document-meta {
+    @apply text-sm text-justice-600 mb-4;
+  }
+  
+  .search-result-snippet {
+    @apply text-justice-700 line-clamp-3;
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, theme('colors.legal.600'), theme('colors.legal.800'));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Loading spinner */
+.spinner {
+  border: 2px solid theme('colors.justice.200');
+  border-top: 2px solid theme('colors.legal.600');
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* PDF viewer styles */
+.react-pdf__Page__canvas {
+  max-width: 100%;
+  height: auto !important;
+}
+
+.react-pdf__Page__textContent {
+  @apply select-text;
+}
+
+/* Code syntax highlighting adjustments */
+.hljs {
+  background: theme('colors.justice.800') !important;
+  color: theme('colors.justice.100') !important;
+  border-radius: 0.5rem;
+} 
