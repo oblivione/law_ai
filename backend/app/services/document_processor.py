@@ -200,7 +200,7 @@ class DocumentProcessor:
         
         # Normalize quotes and dashes
         text = re.sub(r'["""]', '"', text)
-        text = re.sub(r'[''']', "'", text)
+        text = re.sub(r"[''']", "'", text)
         text = re.sub(r'[—–]', '-', text)
         
         return text.strip()
