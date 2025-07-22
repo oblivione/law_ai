@@ -34,13 +34,3 @@ jobs:
         name: react-build
         path: ./frontend/build/
         retention-days: 30
-        
-    - name: Deploy with simple gh-pages (no permissions needed)
-      run: |
-        cd frontend
-        npm install -g gh-pages
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        npx gh-pages -d build -t true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,44 @@
+name: Test Build (No Deploy)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      working-directory: ./frontend
+      run: npm install
+      
+    - name: Build React app
+      working-directory: ./frontend
+      run: npm run build
+      env:
+        CI: false
+        
+    - name: List build contents
+      run: |
+        echo "Build completed successfully!"
+        echo "Build directory contents:"
+        ls -la frontend/build/
+        echo "Build size:"
+        du -sh frontend/build/
+        
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: legal-ai-build
+        path: ./frontend/build/
+        retention-days: 30
