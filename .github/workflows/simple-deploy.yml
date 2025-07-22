@@ -1,4 +1,4 @@
-name: Simple GitHub Pages Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -13,18 +13,23 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
     
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
         
-    - name: Install and Build
-      run: |
-        cd frontend
-        npm install
-        npm run build
+    - name: Install dependencies
+      working-directory: ./frontend
+      run: npm install
+        
+    - name: Build React app
+      working-directory: ./frontend
+      run: npm run build
+      env:
+        CI: false
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
@@ -32,3 +37,5 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./frontend/build
         force_orphan: true
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
