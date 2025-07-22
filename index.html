@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegalAI - AI-Powered Legal Document Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'sans-serif';
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .cta {
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+            margin: 0 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #667eea;
+            color: #667eea;
+        }
+        
+        .tech-stack {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .tech-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-item {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">⚖️ LegalAI</div>
+        <p class="subtitle">AI-Powered Legal Document Search & Analysis Platform</p>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🔍 Semantic Search</h3>
+                <p>Find documents by meaning, not just keywords using advanced AI embeddings</p>
+            </div>
+            <div class="feature">
+                <h3>🧠 Legal Analysis</h3>
+                <p>Get comprehensive AI-powered analysis of legal issues and precedents</p>
+            </div>
+            <div class="feature">
+                <h3>📄 Document Processing</h3>
+                <p>Upload and process PDF, DOCX, and TXT files with OCR support</p>
+            </div>
+            <div class="feature">
+                <h3>📊 Analytics</h3>
+                <p>Track document insights, search trends, and usage analytics</p>
+            </div>
+        </div>
+        
+        <div class="cta">
+            <a href="https://github.com/oblivione/law_ai" class="btn">View on GitHub</a>
+            <a href="https://github.com/oblivione/law_ai/blob/main/README.md" class="btn btn-secondary">Documentation</a>
+        </div>
+        
+        <div class="tech-stack">
+            <h3>Built with Modern Technology</h3>
+            <div class="tech-grid">
+                <span class="tech-item">FastAPI</span>
+                <span class="tech-item">React</span>
+                <span class="tech-item">TypeScript</span>
+                <span class="tech-item">PostgreSQL</span>
+                <span class="tech-item">ChromaDB</span>
+                <span class="tech-item">OpenAI</span>
+                <span class="tech-item">Docker</span>
+                <span class="tech-item">TailwindCSS</span>
+            </div>
+        </div>
+        
+        <div style="margin-top: 2rem; color: #666; font-size: 0.9rem;">
+            <p>🚀 <strong>Status:</strong> Repository is public and ready for deployment</p>
+            <p>📈 <strong>Features:</strong> Document search, AI analysis, semantic understanding</p>
+            <p>🔒 <strong>License:</strong> MIT - Free for commercial and personal use</p>
+        </div>
+    </div>
+</body>
+</html>
