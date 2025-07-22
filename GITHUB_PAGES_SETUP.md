@@ -78,3 +78,4 @@ Once GitHub Pages is enabled, the React app will be available at:
 ---
 
 **Note**: The repository and code are ready - only GitHub Pages activation is needed!
+# Repository is now public - GitHub Pages should be available!
