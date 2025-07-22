@@ -2,8 +2,8 @@
 
 ## 🌐 Live Demo
 
-- **Frontend (GitHub Pages)**: [https://oblivione.github.io/law_ai](https://oblivione.github.io/law_ai) 🚀 **BUILDING**
-- **Repository**: [https://github.com/oblivione/law_ai](https://github.com/oblivione/law_ai) ✅ **LIVE**
+- **Frontend (GitHub Pages)**: [https://oblivione.github.io/law_ai](https://oblivione.github.io/law_ai) 🚀 **DEPLOYING**
+- **Repository**: [https://github.com/oblivione/law_ai](https://github.com/oblivione/law_ai) ✅ **PUBLIC & LIVE**
 
 ## 🚀 Quick Deploy Options
 
