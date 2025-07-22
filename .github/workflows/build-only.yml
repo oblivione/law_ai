@@ -1,0 +1,46 @@
+name: Build and Upload React App
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      working-directory: ./frontend
+      run: npm install
+      
+    - name: Build React app
+      working-directory: ./frontend
+      run: npm run build
+      env:
+        CI: false
+        
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: react-build
+        path: ./frontend/build/
+        retention-days: 30
+        
+    - name: Deploy with simple gh-pages (no permissions needed)
+      run: |
+        cd frontend
+        npm install -g gh-pages
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        npx gh-pages -d build -t true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
