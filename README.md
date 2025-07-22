@@ -124,6 +124,19 @@ npm start
 
 Visit `http://localhost:3000` to access the application.
 
+## 🌐 GitHub Pages Deployment
+
+**Repository**: [https://github.com/oblivione/law_ai](https://github.com/oblivione/law_ai)
+
+**Live Demo** (after setup): [https://oblivione.github.io/law_ai](https://oblivione.github.io/law_ai)
+
+### Enable GitHub Pages:
+1. Go to repository **Settings** → **Pages**
+2. Set **Source** to **GitHub Actions**
+3. Workflows will deploy automatically
+
+See [GITHUB_PAGES_SETUP.md](GITHUB_PAGES_SETUP.md) for detailed setup instructions.
+
 ## 🔧 Configuration
 
 ### Environment Variables
