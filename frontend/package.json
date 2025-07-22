@@ -2,7 +2,7 @@
   "name": "legal-ai-frontend",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://oblivione.github.io/law_ai",
+  "homepage": "https://oblivione.github.io/law_ai/",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
