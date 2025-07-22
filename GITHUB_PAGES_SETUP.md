@@ -79,3 +79,21 @@ Once GitHub Pages is enabled, the React app will be available at:
 
 **Note**: The repository and code are ready - only GitHub Pages activation is needed!
 # Repository is now public - GitHub Pages should be available!
+
+## 🔧 Permission Issues Fixed
+
+The previous deployment failed due to GitHub Actions permission issues. Fixed by:
+
+1. **Added proper permissions** to workflows:
+   ```yaml
+   permissions:
+     contents: read
+     pages: write
+     id-token: write
+   ```
+
+2. **Created new static.yml workflow** using official GitHub Pages deployment
+3. **Disabled problematic workflows** that used gh-pages branch approach
+4. **Simplified to single-job deployment** to avoid token issues
+
+The new workflow should deploy successfully without permission errors.
