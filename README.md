@@ -124,18 +124,27 @@ npm start
 
 Visit `http://localhost:3000` to access the application.
 
-## 🌐 GitHub Pages Deployment
+## 🌐 Deployment Options
 
-**Repository**: [https://github.com/oblivione/law_ai](https://github.com/oblivione/law_ai)
+**⚠️ IMPORTANT**: LegalAI is a **full-stack application** requiring both frontend (React) and backend (FastAPI Python).
 
-**Live Demo** (after setup): [https://oblivione.github.io/law_ai](https://oblivione.github.io/law_ai)
+### 🚂 Full-Stack Deployment (Recommended)
+- **Railway**: [Deploy to Railway](https://railway.app) - Supports both frontend + backend
+- **Render**: [Deploy to Render](https://render.com) - Free tier available
+- **Heroku**: Traditional platform with Python + Node.js support
 
-### Enable GitHub Pages:
-1. Go to repository **Settings** → **Pages**
-2. Set **Source** to **GitHub Actions**
-3. Workflows will deploy automatically
+### 📄 Frontend Only (GitHub Pages)
+- **Repository**: [https://github.com/oblivione/law_ai](https://github.com/oblivione/law_ai)
+- **Frontend Demo**: [https://oblivione.github.io/law_ai](https://oblivione.github.io/law_ai)
+- **Limitation**: No backend functionality (search, upload, AI analysis won't work)
 
-See [GITHUB_PAGES_SETUP.md](GITHUB_PAGES_SETUP.md) for detailed setup instructions.
+### 🔧 Quick Setup
+```bash
+# Run the deployment script
+./deploy-fullstack.sh
+```
+
+See [FULLSTACK_DEPLOYMENT.md](FULLSTACK_DEPLOYMENT.md) for detailed deployment options.
 
 ## 🔧 Configuration
 
