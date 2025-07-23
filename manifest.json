@@ -1,0 +1,9 @@
+{
+  "short_name": "LegalAI",
+  "name": "LegalAI - Legal Document Analysis Platform",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#667eea",
+  "background_color": "#ffffff"
+}

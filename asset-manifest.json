@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/law_ai/static/css/main.07b2c89e.css",
+    "main.js": "/law_ai/static/js/main.f627e849.js",
+    "index.html": "/law_ai/index.html",
+    "main.07b2c89e.css.map": "/law_ai/static/css/main.07b2c89e.css.map",
+    "main.f627e849.js.map": "/law_ai/static/js/main.f627e849.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07b2c89e.css",
+    "static/js/main.f627e849.js"
+  ]
+}
