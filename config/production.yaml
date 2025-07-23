@@ -1,0 +1,121 @@
+# Legal AI Production Configuration
+# This file contains production-specific settings and overrides
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+  timeout: 60
+  max_connections: 1000
+  
+database:
+  type: "postgresql"
+  pool_size: 20
+  max_overflow: 30
+  pool_timeout: 30
+  pool_recycle: 3600
+  echo: false
+  
+vector_store:
+  type: "chromadb"
+  persist_directory: "/data/chroma"
+  collection_name: "legal_documents"
+  
+redis:
+  max_connections: 50
+  socket_timeout: 5
+  health_check_interval: 30
+  
+ai_models:
+  providers:
+    openrouter:
+      base_url: "https://openrouter.ai/api/v1"
+      models:
+        analysis: "anthropic/claude-3-sonnet"
+        reasoning: "anthropic/claude-3-opus"
+        embedding: "sentence-transformers/all-MiniLM-L6-v2"
+      timeout: 60
+      max_retries: 3
+      
+processing:
+  pdf:
+    max_file_size: 104857600  # 100MB
+    chunk_size: 1000
+    chunk_overlap: 200
+    batch_size: 10
+    concurrent_workers: 4
+    timeout: 300
+    
+  text_extraction:
+    engines: ["pymupdf", "pdfplumber"]
+    fallback_enabled: true
+    ocr_enabled: true
+    
+search:
+  default_limit: 10
+  max_limit: 100
+  similarity_threshold: 0.7
+  rerank_enabled: true
+  
+security:
+  rate_limiting:
+    enabled: true
+    default_rate: "100/hour"
+    burst_rate: "20/minute"
+    
+  cors:
+    allow_credentials: true
+    max_age: 86400
+    
+  headers:
+    x_frame_options: "DENY"
+    x_content_type_options: "nosniff"
+    x_xss_protection: "1; mode=block"
+    
+monitoring:
+  metrics:
+    enabled: true
+    port: 9090
+    path: "/metrics"
+    
+  health_checks:
+    enabled: true
+    interval: 30
+    timeout: 10
+    
+  logging:
+    level: "INFO"
+    format: "json"
+    structured: true
+    
+caching:
+  default_ttl: 3600
+  search_results_ttl: 1800
+  document_metadata_ttl: 7200
+  
+backup:
+  enabled: true
+  schedule: "0 2 * * *"
+  retention_days: 30
+  compression: true
+  
+performance:
+  async_workers: 8
+  connection_pool_size: 50
+  request_timeout: 30
+  
+deployment:
+  type: "docker"
+  scaling:
+    min_replicas: 2
+    max_replicas: 10
+    target_cpu: 70
+    target_memory: 80
+    
+  resources:
+    requests:
+      cpu: "500m"
+      memory: "1Gi"
+    limits:
+      cpu: "2000m"
+      memory: "4Gi" 
