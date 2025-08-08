@@ -24,10 +24,14 @@ const queryClient = new QueryClient({
   },
 });
 
+// Derive basename from PUBLIC_URL for GitHub Pages deployments
+const derivedBasename = (process.env.PUBLIC_URL || '')
+  .replace(/^(https?:\/\/[^/]+)?/, '') || '/';
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
+      <Router basename={derivedBasename}>
         <div className="App">
           <Layout>
             <Routes>
